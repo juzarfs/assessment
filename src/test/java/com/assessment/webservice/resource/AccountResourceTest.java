@@ -68,7 +68,7 @@ public class AccountResourceTest {
 		when(securityService.getUserDetails()).thenReturn(userdetails);
 		when(accountService.getAccountsByUsername(any())).thenReturn(Collections.singletonList(accountDetail));
 		when(accountService.getTransactionsByAccountId(any(Long.class))).thenReturn(Collections.EMPTY_LIST);
-		Response result = accountResource.fetchAccountTransactions(123L);
+		Response result = accountResource.fetchAccountTransactions(1L);
 		List<Transaction> entity = (List<Transaction>) result.getEntity(); 
 		assertEquals(entity.size(),0);
 		assertEquals(200, result.getStatus());
